@@ -22,10 +22,10 @@ class Chapter01ApplicationTests {
      */
         //创建对象
         User user = new User();
-        user.setUserName("李四");
-        user.setAddress("广州市海珠区");
-        user.setAge(20);
-        //  user.setId(2);
+        user.setUserName("王五");
+        user.setAddress("广州市天河区");
+        user.setAge(22);
+//        user.setId(2);
         // 一但指定ID，isNew()方法返回false
         //调用保存的方法
         User flag = userRespository.save(user);
@@ -41,7 +41,7 @@ class Chapter01ApplicationTests {
      */
     @Test
     public void testFindById(){
-        Optional<User> user = userRespository.findById(1);
+        Optional<User> user = userRespository.findById(3);
         System.out.println(user.get());
     }
 

@@ -19,8 +19,7 @@ public class Project {
     private Integer id;
     private String projectName;
 
-    private Set<Employee> employees = new HashSet<>();
-    //一对多
+
     /**
      * 配置项目到员工的多对多关系
      * 配置多对多的映射关系
@@ -36,6 +35,7 @@ public class Project {
      * referencedColumnName：参照的主表的主键名
      * inverseJoinColumns：配置对方对象在中间表的外键
      */
+    //一对多
     @ManyToMany(targetEntity =Employee.class ,cascade = CascadeType.ALL)
     //第三张表（外键关系表、中间表）
     //name属性：第三张表的表名称
@@ -44,6 +44,8 @@ public class Project {
             joinColumns = @JoinColumn(name = "project_id",referencedColumnName = "id"),
             //inverseJoinColumns:对方对象在中间表的外键
             inverseJoinColumns = @JoinColumn(name = "employee_id",referencedColumnName = "id"))
+
+    private Set<Employee> employees = new HashSet<>();
 
     public Set<Employee> getEmployees() {
         return employees;

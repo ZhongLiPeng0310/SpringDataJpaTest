@@ -21,7 +21,7 @@ public class User {
 
     //一个用户有一个角色
     @ManyToOne()
-    @JoinColumn(name = "role_id")
+    @JoinColumn(name = "role_id") //外键
     private Role role;
 
     public Integer getId() {

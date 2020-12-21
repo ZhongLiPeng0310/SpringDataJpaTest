@@ -21,7 +21,7 @@ public class Role {
     private String roleName;
 
     //一对多 ：  一个角色被多个用户同时使用
-    @OneToMany(cascade = CascadeType.ALL,mappedBy = "role")
+    @OneToMany(cascade = CascadeType.ALL,mappedBy = "role")  //维护
     private Set<User> users = new HashSet<User>();
 
     public Integer getId() {

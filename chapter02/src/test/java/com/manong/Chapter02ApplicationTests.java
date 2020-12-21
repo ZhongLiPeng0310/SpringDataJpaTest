@@ -28,6 +28,9 @@ class Chapter02ApplicationTests {
     @Resource
     private StudentRepository studentRepository;
 
+    /**
+     * 查询所有
+     */
     @Test
     public void testFindAll(){
         List<Student> studentList = studentRepository.findAll();

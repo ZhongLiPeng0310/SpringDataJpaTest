@@ -24,7 +24,7 @@ public class Student {
 
     //一对一 ：一个学生对应一个班级
     @OneToOne(cascade = CascadeType.PERSIST)  //标记一对一关联,cascade属性：设置级联操作
-    @JoinColumn(name = "grade_id")  //外键列
+    @JoinColumn(name = "grade_id")  //外键列  会被创建 外键字段
     private Grade grade;
 
 
