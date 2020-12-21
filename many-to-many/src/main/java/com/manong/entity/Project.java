@@ -37,6 +37,8 @@ public class Project {
      */
     //一对多
     @ManyToMany(targetEntity =Employee.class ,cascade = CascadeType.ALL)
+    private Set<Employee> employees = new HashSet<>();
+
     //第三张表（外键关系表、中间表）
     //name属性：第三张表的表名称
     @JoinTable(name = "t_employee_project",
@@ -45,7 +47,7 @@ public class Project {
             //inverseJoinColumns:对方对象在中间表的外键
             inverseJoinColumns = @JoinColumn(name = "employee_id",referencedColumnName = "id"))
 
-    private Set<Employee> employees = new HashSet<>();
+
 
     public Set<Employee> getEmployees() {
         return employees;
